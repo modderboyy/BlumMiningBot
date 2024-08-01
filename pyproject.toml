@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "blum-drop-game-bot"
+authors = [
+    {name="Criptacoder", email="crippti@gmail.com"}
+]
+
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "tls_client",
+    "pydantic",
+    "PyYAML"
+]
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "v0.0.1"
+
+[project.scripts]
+blum-drop-game-bot = "blum_drop_game_bot.main:main"
+
+
